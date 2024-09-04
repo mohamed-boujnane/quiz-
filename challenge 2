@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+int taille;
+printf("entre le nombre des element a ajouter :");
+scanf("%d",&taille);
+int T[taille];
+for (int i =0 ; i < taille ; i ++) {
+printf("T[%D] = ", i);
+scanf("%d",&T[i]);
+}
+printf("le tableu est : \n");
+for (int i =0 ; i < taille ; i ++){
+    printf("%d \n",T[i]);
+}
+    return 0;
+}
