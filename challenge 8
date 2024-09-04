@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main () {
+    int taille;
+    int T[taille], Copie[taille];
+    
+    printf("veuillez  entrez nombre des éléments à ajouter : ");
+    scanf("%d", &taille);
+    for(int i=0; i<taille; i++) {
+        printf("element[%d] = ", i);
+        scanf("%d", &T[i]);
+        Copie[i] = T[i];
+    }
+    printf("Tableau original : \n");
+    for(int i=0; i<taille; i++) {
+        printf("%d\n", T[i]);
+    }
+    printf(" resulta apres copié Tableau: \n");
+    for(int i=0; i<taille; i++) {
+        printf("%d\n", Copie[i]);
+    }
+    return 0;
+}
