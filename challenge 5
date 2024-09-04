@@ -1,0 +1,17 @@
+int main() {
+int taille , min ;
+
+printf("ajouter le nombre des element :");
+scanf("%d",&taille);
+int T[taille];
+printf("T[0] =");
+scanf("%d",&T[0]);
+min = T[0];
+for ( int i = 1 ; i< taille ; i ++){
+    printf("T[%d] =",i);
+    scanf("%d", &T[i]);
+    if (T[i] < min) min = T[i];
+}
+printf("le Minimum des element  de tableu est : %d",min);
+    return 0;
+}
