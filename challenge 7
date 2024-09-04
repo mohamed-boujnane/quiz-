@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main () {
+    int taille;
+    printf("entre le nombre des éléments à ajouter : ");
+    scanf("%d", &taille);
+    int T[taille];
+    for(int i=0; i<taille; i++) {
+        printf("T[%d] = ", i);
+        scanf("%d", &T[i]);
+    }
+
+    for(int i=0; i<taille; i++) {
+        int min_num = i;
+        for(int j=i+1; j<taille; j++) {
+            if(T[j] < T[min_num]) min_num = j;
+        }
+        if(min_num != i) {
+            int time = T[min_num];
+            T[min_num] = T[i];
+            T[i] = time;
+        }
+    }    
+
+    printf("Resultat : \n");
+    for(int i=0; i<taille; i++) {
+        printf("%d\n", T[i]);
+    }
+    return 0;
+}
