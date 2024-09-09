@@ -50,5 +50,49 @@ int main() {
     }
     break;
 }
+
+case 2: {
+    if (count == 0) {
+        printf("aucune tache afficher.\n");
+    } else {
+        for (int i = 0; i < count; i++) {
+            printf("%d | %s | %s | %s | %s\n", taches[i].id, taches[i].titre, taches[i].description, taches[i].deadline, taches[i].statut);
+        }
+    }
+    break;
+}
+
+case 3: {
+    if (count == 0) {
+        printf("aucune tache modifier.\n");
+    } else {
+        int id;
+        printf("antrez id de la tache a modifier: ");
+        scanf("%d", &id);
+        int found = 0;
+        for (int i = 0; i < count; i++) {
+            if (taches[i].id == id) {
+                printf("entrez la nouvelle description: ");
+                scanf(" %[^\n]", taches[i].description);
+                printf("entrez le nouveau deadline: ");
+                scanf(" %[^\n]", taches[i].deadline);
+                printf("entrez le nouveau statut: ");
+                scanf(" %[^\n]", taches[i].statut);
+                printf("Teche modifie bien\n");
+                found = 1;
+                break;
+            }
+        }
+        if (!found) {
+            printf("Tache introuvable.\n");
+        }
+    }
+    break;
+}
+
+
+
+
+
 return 0;
 }
