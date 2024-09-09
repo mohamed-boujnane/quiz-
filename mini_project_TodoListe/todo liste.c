@@ -90,6 +90,76 @@ case 3: {
     break;
 }
 
+case 4: {
+    if (count == 0) {
+        printf("aucune tache a supprimer.\n");
+    } else {
+        int id;
+        printf("entrez id de la tache a supprimer: ");
+        scanf("%d", &id);
+        int found = 0;
+        for (int i = 0; i < count; i++) {
+            if (taches[i].id == id) {
+                for (int j = i; j < count - 1; j++) {
+                    taches[j] = taches[j + 1];
+                }
+                count--;
+                printf("Tache supprime avec succes!\n");
+                found = 1;
+                break;
+            }
+        }
+        if (!found) {
+            printf("tache introuvable.\n");
+        }
+    }
+    break;
+}
+
+
+case 5: {
+    if (count == 0) {
+        printf("aucune tache  rechercher.\n");
+    } else {
+        int recherche_choix;
+        printf("Rechercher par: 1 : id ## 2 ; titre: ");
+        scanf("%d", &recherche_choix);
+        if (recherche_choix == 1) {
+            int id;
+            printf("entrez id: ");
+            scanf("%d", &id);
+            int found = 0;
+            for (int i = 0; i < count; i++) {
+                if (taches[i].id == id) {
+                    printf("Tache trouve: %d | %s | %s | %s | %s\n", taches[i].id, taches[i].titre, taches[i].description, taches[i].deadline, taches[i].statut);
+                    found = 1;
+                    break;
+                }
+            }
+            if (!found) {
+                printf("tache introuvable.\n");
+            }
+        } else if (recherche_choix == 2) {
+            char titre[100];
+            printf("Entrez le titre: ");
+            scanf(" %[^\n]", titre);
+            int found = 0;
+            for (int i = 0; i < count; i++) {
+                if (strcmp(taches[i].titre, titre) == 0) {
+                    printf("Tâche trouvée: %d | %s | %s | %s | %s\n", taches[i].id, taches[i].titre, taches[i].description, taches[i].deadline, taches[i].statut);
+                    found = 1;
+                    break;
+                }
+            }
+            if (!found) {
+                printf("tache introuvable.\n");
+            }
+        } else {
+            printf("Choix invalide.\n");
+        }
+    }
+    break;
+}
 
 
 
