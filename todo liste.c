@@ -25,10 +25,10 @@ int main() {
     printf("4: rechercher les taches");
     printf("5: afficher stasistique");
     printf("6 : sortie en programme ");
-    scanf("%d",choix);
+    scanf("%d",choix); 
 
-  }
-  switch (choix) {
+  switch(choix) {
+
 case 1: {
 int id;
 char titre[100];
@@ -37,32 +37,86 @@ char deadline [10];
 char status [100];
 
 printf("entre id :");
-scanf("%[^\n]",&id);
+scanf(" %[^\n]s",&id);
 
 printf("le titre :");
-scanf("%[^\n]",titre);
+scanf(" %[^\n]",titre);
     
 printf("descreption :");
-scanf("%[^\n]",descreption);
+scanf(" %[^\n]",description);
 
 printf("deadline :");
-scanf("%[^\n]",deadline);
+scanf(" %[^\n]",deadline);
 
 printf("status :");
-scanf("%[^\n]",status);
+scanf(" %[^\n]",status);
 
 Tache T = {
    id,
    titre,
-   descreption,
+   description,
    deadline,
    status
 };
   taches [count] = T;
   count++;
-  printf ("### tache ajoute avec succes ###\n")
-}break ;
-    
+  printf ("### tache ajoute avec succes ###\n");
+} break;
+
+
+case 2: {
+     if(!count) printf("## aucune tach a modifier  ## \n");
+ else {
+     int choix;
+     printf("choisir id du tach a modifier :\n ID ## Titre ## Description ## Deadline ## Statut\n");
+         for(int i=0; i<count; i++) {
+printf("%d | %s | %s | %s | %s\n", taches[i].id, taches[i].titre, taches[i].description, taches[i].deadline, taches[i].statut);
+scanf("%d", &choix);
+if(choix>count || choix<0) printf("Choix invalide!");
+else {
+printf("entre  Nouveau Description ===> ");
+scanf(" %[^\n]s", taches[choix].description);
+printf("entre Nouveau Deadline ===> ");
+scanf(" %[^\n]s", taches[choix].deadline);
+printf("entre  Nouveau Statut ===> ");
+scanf(" %[^\n]s", taches[choix].statut);
+printf(" entre tachModifiée avec succès!\n");
+                    }
+                }
+            }; break;
+
+
+ 
+
+
+
+
+
+
+
+
+
+  
+/* case 3: {
+  if(!count) printf("aucun tache modifier \n ");
+  else {
+    int choix;
+    int i;
+    printf("choisir id du tache modifier : \n  id  ##  description  ##  deadline  ##   statut  \n");
+       for(i=0;  i<count ; i++)  {
+              printf("entre id de tache modifier : \n ## id ## titre  ##  description  ##  deadline  ##  statut   \n");
+         
+        
+
+       }   */
+
+
+
+
+  }
+
+
+}
 
     return 0;
 }
