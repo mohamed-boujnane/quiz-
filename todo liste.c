@@ -28,7 +28,7 @@ int main() {
     scanf("%d",choix); 
 
   switch(choix) {
-
+   
 case 1: {
 int id;
 char titre[100];
@@ -85,43 +85,33 @@ printf(" entre tachModifiée avec succès!\n");
                 }
             }; break;
 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-  
-/* case 3: {
+case 3: {
   if(!count) printf("aucun tache modifier \n ");
   else {
     int choix;
     int i;
     printf("choisir id du tache modifier : \n  id  ##  description  ##  deadline  ##   statut  \n");
        for(i=0;  i<count ; i++)  {
-              printf("entre id de tache modifier : \n ## id ## titre  ##  description  ##  deadline  ##  statut   \n");
-         
-        
+    printf("%d ## %s  ## %s ## %s ## %s \n",taches[i].id, taches[i].titre, taches[i].description, taches[i].deadline, taches[i].statut) ;       
+       }
+    scanf("%d",&choix);
+        if(choix > count || choix < 0)printf("choix non valide ");
+        else {
+            for(int i=0 ; i<count -1 ;i++)
+            taches[i] = taches [i+1];
+            count--;
+            printf("la tache est supprime");
+        }
 
-       }   */
+       }  
+};break;
 
 
-
+case 4 : 
 
   }
 
-
 }
-
+ } while(choix >= 1 && choix <= 5);
     return 0;
 }
