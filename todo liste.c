@@ -74,16 +74,21 @@ printf("%d | %s | %s | %s | %s\n", taches[i].id, taches[i].titre, taches[i].desc
 scanf("%d", &choix);
 if(choix>count || choix<0) printf("Choix invalide!");
 else {
-printf("entre  Nouveau Description ===> ");
+printf("entre  Nouveau Description :");
 scanf(" %[^\n]s", taches[choix].description);
-printf("entre Nouveau Deadline ===> ");
+printf("entre Nouveau Deadline : ");
 scanf(" %[^\n]s", taches[choix].deadline);
-printf("entre  Nouveau Statut ===> ");
+printf("entre  Nouveau Statut : ");
 scanf(" %[^\n]s", taches[choix].statut);
 printf(" entre tachModifiée avec succès!\n");
                     }
                 }
             }; break;
+
+
+
+
+
 
 
  
