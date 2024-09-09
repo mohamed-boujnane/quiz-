@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+
+typedef struct {
+    int DD;
+    int MM;
+    int YYYY;
+} Date;
+
 typedef struct  {
 
     int id;
@@ -107,7 +114,33 @@ case 3: {
 };break;
 
 
-case 4 : 
+case 4 : {
+    if(!count) printf("aucune tache \n");
+
+    else {
+
+        int choix;
+
+        printf("recherche par id ou par title : \n  1:par id \n 2:par titre :");
+        scanf("%d",&choix);
+
+            if(choix ==1) {
+               int id;
+               printf("entre id :");
+               scanf("%d",&choix);
+
+               if (id > count || id < 0) 
+               printf("id non valide");
+               else {
+                printf ("entre id :");
+                scanf ("%d",&id);
+               }
+
+            }
+
+
+    }
+}
 
   }
 
