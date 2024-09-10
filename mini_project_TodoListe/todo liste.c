@@ -160,6 +160,24 @@ case 5: {
     break;
 }
 
+ case 6 :{
+  if (count ==0) {
+    printf("aucune tache pour stasistique");
+  } else {
+     int complete = 0 , incomplete = 0 ;
+     for(int i =0 ; i < count ; i++) {
+        if(strcmp(taches[i].statut )==0) {
+            complete++;
+        }
+     }
+          printf("nombre total des tache : %d",count);
+          printf("nombre de tache complete :%d",complete);
+          printf("nombre de tache incomplete :%d",incomplete);
+     
+  }
+
+}
+
 
 
 case 7: {
