@@ -164,5 +164,23 @@ case 5: {
 
 
 
+case 7: {
+                printf("Exiting program...\n");
+                break;
+            }
+
+            default:
+                printf("Choix invalide. Veuillez essayer à nouveau.\n");
+                break;
+        }
+
+    } while (choix != 7);
+
+    return 0;
+}
+
+
+
+
 return 0;
 }
