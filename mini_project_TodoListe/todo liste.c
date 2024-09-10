@@ -27,8 +27,7 @@ int main() {
         printf("7: quitter\n");
         printf("entrez votre choix: ");
         scanf("%d", &choix);
-}
-
+  switch (choix){
 
   case 1: {
     int n;
@@ -87,7 +86,7 @@ case 3: {
             printf("Tache introuvable.\n");
         }
     }
-    break;
+  break;
 }
 
 case 4: {
@@ -160,39 +159,16 @@ case 5: {
     }
     break;
 }
-   case 6: {
-    if (count == 0) {
-        printf("aucune tache de statistiques.\n");
-    } else {
-        int complete = 0, incomplete = 0;
-        for (int i = 0; i < count; i++) {
-            if (strcmp(taches[i].statut, "finalisee") == 0) {
-                complete++;
-            } else {
-                incomplete++;
-            }
-        }
-        
-        
-        printf("nombre total de taches: %d\n", count);
-        printf("nombre de taches complete: %d\n", complete);
-        printf("nombre de taches incompletes: %d\n", incomplete);
-
-       
-        printf("Nombre de jours restants jusqu'au deadline: Cette fonctionnalité nécessite une gestion des dates plus avancée.\n");
-    }
-    break;
-}
 
 
 
 case 7: {
-                printf("Exiting program...\n");
+                printf("sortie program \n");
                 break;
             }
 
             default:
-                printf("Choix invalide. Veuillez essayer à nouveau.\n");
+                printf("choix invalide. entre a  nouveau.\n");
                 break;
         }
 
@@ -202,7 +178,3 @@ case 7: {
 }
 
 
-
-
-return 0;
-}
